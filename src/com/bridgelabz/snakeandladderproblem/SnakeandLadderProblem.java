@@ -19,12 +19,21 @@ public class SnakeandLadderProblem {
 
 		System.out.println("Welcome to Snake & Ladder Simulator Program");
 		currentPosition = START_POSITION;
-		diceRolls();
+		int rollPlayer1 = diceRolls("player1");
+		int rollPlayer2 = diceRolls("player2");
+		if (rollPlayer1 > rollPlayer2) {
+			System.out.println("Player2 is the winner");
+		} else if (rollPlayer1 < rollPlayer2) {
+			System.out.println("Player1 is the winner");
+		} else {
+			System.out.println("It is a tie.");
+		}
+
 	}
 
-	public static void diceRolls() {
+	public static int diceRolls(String player) {
 		int noOfRolls = 0;
-
+		int currentPosition = START_POSITION;
 		/*
 		 * Note In case the player position moves below 0, then the player restarts from
 		 * 0
@@ -62,6 +71,7 @@ public class SnakeandLadderProblem {
 			}
 			System.out.println(currentPosition);
 		}
-		System.out.println("No. of total Dice Rolls are: " + noOfRolls);
+		System.out.println("No. of total Dice Rolls by " + player + " are: " + noOfRolls);
+		return noOfRolls;
 	}
 }
