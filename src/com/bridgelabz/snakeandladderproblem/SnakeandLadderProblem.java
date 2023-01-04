@@ -25,6 +25,13 @@ public class SnakeandLadderProblem {
 	public static void diceRolls() {
 		// between 1 to 6. - Use ((RANDOM)) to get the number between 1 to 6
 		int diceResult = (int) (Math.floor(Math.random() * 10) % 6 + 1);
+
+		/*
+		 * - Use ((RANDOM)) to check for Options - In Case of No Play the player stays
+		 * in the same position - In Case of Ladder the player moves ahead by the number
+		 * of position received in the die - In Case of Snake the player moves behind by
+		 * the number of position received in the die
+		 */
 		int playCheck = (int) (Math.floor(Math.random() * 10) % 3);
 		if (playCheck == 0) {
 			currentPosition += 0;
