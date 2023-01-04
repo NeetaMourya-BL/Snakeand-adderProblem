@@ -19,13 +19,23 @@ public class SnakeandLadderProblem {
 
 		System.out.println("Welcome to Snake & Ladder Simulator Program");
 		currentPosition = START_POSITION;
-		System.out.println(diceRolls());
+		diceRolls();
 	}
 
-	public static int diceRolls() {
+	public static void diceRolls() {
 		// between 1 to 6. - Use ((RANDOM)) to get the number between 1 to 6
 		int diceResult = (int) (Math.floor(Math.random() * 10) % 6 + 1);
-		return diceResult;
-
+		int playCheck = (int) (Math.floor(Math.random() * 10) % 3);
+		if (playCheck == 0) {
+			currentPosition += 0;
+		} else if (playCheck == 1) {
+			currentPosition += diceResult;
+		} else {
+			currentPosition -= diceResult;
+			if (currentPosition < 0) {
+				currentPosition = START_POSITION;
+			}
+		}
+		System.out.println(currentPosition);
 	}
 }
