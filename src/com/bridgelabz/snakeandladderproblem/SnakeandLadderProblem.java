@@ -24,8 +24,8 @@ public class SnakeandLadderProblem {
 
 	public static void diceRolls() {
 		/*
-		 * position 100. - Note In case the player position moves below 0, then the
-		 * player restarts from 0
+		 * Note In case the player position moves below 0, then the player restarts from
+		 * 0
 		 */
 
 		while (currentPosition < FINAL_POSITION) {
@@ -40,10 +40,20 @@ public class SnakeandLadderProblem {
 			 * the number of position received in the die
 			 */
 			int playCheck = (int) (Math.floor(Math.random() * 10) % 3);
+
+			/*
+			 * position 100. - Note in case the player position go above 100, the player
+			 * stays in the same previous position till the player gets the exact
+			 * 
+			 * number
+			 */
 			if (playCheck == 0) {
 				currentPosition += 0;
 			} else if (playCheck == 1) {
 				currentPosition += diceResult;
+				if (currentPosition > 100) {
+					currentPosition -= diceResult;
+				}
 			} else {
 				currentPosition -= diceResult;
 				if (currentPosition < 0) {
