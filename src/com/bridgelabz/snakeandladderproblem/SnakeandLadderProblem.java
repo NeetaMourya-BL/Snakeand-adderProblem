@@ -19,5 +19,12 @@ public class SnakeandLadderProblem {
 
 		System.out.println("Welcome to Snake & Ladder Simulator Program");
 		currentPosition = START_POSITION;
+		System.out.println(diceRolls());
+	}
+
+	public static int diceRolls() {
+		int diceResult = (int) (Math.floor(Math.random() * 10) % 6 + 1);
+		return diceResult;
+
 	}
 }
