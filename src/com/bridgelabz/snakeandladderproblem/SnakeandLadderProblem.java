@@ -23,6 +23,8 @@ public class SnakeandLadderProblem {
 	}
 
 	public static void diceRolls() {
+		int noOfRolls = 0;
+
 		/*
 		 * Note In case the player position moves below 0, then the player restarts from
 		 * 0
@@ -32,7 +34,7 @@ public class SnakeandLadderProblem {
 
 			// between 1 to 6. - Use ((RANDOM)) to get the number between 1 to 6
 			int diceResult = (int) (Math.floor(Math.random() * 10) % 6 + 1);
-
+			noOfRolls++;
 			/*
 			 * - Use ((RANDOM)) to check for Options - In Case of No Play the player stays
 			 * in the same position - In Case of Ladder the player moves ahead by the number
@@ -43,9 +45,7 @@ public class SnakeandLadderProblem {
 
 			/*
 			 * position 100. - Note in case the player position go above 100, the player
-			 * stays in the same previous position till the player gets the exact
-			 * 
-			 * number
+			 * stays in the same previous position till the player gets the exact number
 			 */
 			if (playCheck == 0) {
 				currentPosition += 0;
@@ -62,5 +62,6 @@ public class SnakeandLadderProblem {
 			}
 			System.out.println(currentPosition);
 		}
+		System.out.println("No. of total Dice Rolls are: " + noOfRolls);
 	}
 }
